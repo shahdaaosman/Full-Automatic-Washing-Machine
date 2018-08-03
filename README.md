@@ -5,7 +5,7 @@ This is a Java Maven Project Template
 
 # How to compile the project
 
-[![Build Status](https://travis-ci.org/kiat/CPPProjectTemplate.svg?branch=master)](https://travis-ci.org/kiat/CPPProjectTemplate)
+
 
 We use Apache Maven to compile and run this project. 
 

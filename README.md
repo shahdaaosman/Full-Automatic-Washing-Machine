@@ -6,7 +6,8 @@ This is a Java Maven Project Template
 # How to compile the project
 
 
-[![Build Status](https://travis-ci.org/kiat/JavaProjectTemplate.svg?branch=master)](https://travis-ci.org/kiat/JavaProjectTemplate)
+[![Build Status](https://travis-ci.org/kiat/JavaProjectTemplate.svg?branch=master)](https://travis-ci.org/kiat/JavaProjectTemplate)  [![Coverage Status](https://coveralls.io/repos/github/kiat/JavaProjectTemplate/badge.svg)](https://coveralls.io/github/kiat/JavaProjectTemplate)
+
 
 We use Apache Maven to compile and run this project. 
 
@@ -86,3 +87,12 @@ mvn checkstyle:checkstyle
 ```bash
 target/site/checkstyle.html
 ```
+
+
+# Generate  coveralls:report 
+
+```bash
+mvn -DrepoToken=YOUR-REPO-TOCKEN-ON-COVERALLS  cobertura:cobertura coveralls:report
+```
+
+

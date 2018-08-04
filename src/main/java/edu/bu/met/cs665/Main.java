@@ -2,9 +2,6 @@ package edu.bu.met.cs665;
 
 import edu.bu.met.cs665.example1.Person;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
 public class Main {
 
   /**
@@ -13,12 +10,9 @@ public class Main {
    */
   public static void main(String[] args) {
 
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    Person student = new Person("John", "Doe");
 
-    LocalDate xmas = LocalDate.parse("22/12/1994", formatter);
-    Person student = new Person("John", "Doe", xmas);
-
-    System.out.println(student.calculateAge());
+    System.out.println(student.getFirstName());
   }
 
 }

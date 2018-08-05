@@ -14,7 +14,7 @@ public class TestAge {
   public void testGetFirstName() {
 
     Person student = new Person("John", "Doe");
-    assertEquals(student.getFirstName(), "John");
+    assertEquals("John", student.getFirstName());
 
   }
 
@@ -23,8 +23,9 @@ public class TestAge {
   public void testSetFirstName() {
     Person student = new Person("John", "Doe");
     student.setFirstName("Bob");
+
     // age one year after is one
-    assertEquals(student.getFirstName(), "Bob");
+    assertEquals("Bob", student.getFirstName());
   }
 
 
@@ -32,7 +33,7 @@ public class TestAge {
   public void testGetLastName() {
 
     Person student = new Person("John", "Doe");
-    assertEquals(student.getLastName(), "Doe");
+    assertEquals("Doe", student.getLastName());
 
   }
 
@@ -44,7 +45,7 @@ public class TestAge {
     Person student = new Person("John", "Doe");
     student.setLastName("Henrink");
 
-    assertEquals(student.getLastName(), "Henrink");
+    assertEquals("Henrink", student.getLastName());
 
   }
 
@@ -53,16 +54,16 @@ public class TestAge {
   public void testPerson() {
 
     Person student = new Person("John", "Doe");
-    assertEquals(student.getFirstName(), "John");
-    assertEquals(student.getLastName(), "Doe");
+    assertEquals("John", student.getFirstName());
+    assertEquals("Doe", student.getLastName());
   }
 
 
   @Test
   public void testMain() {
-      Main m = new Main();
-      String [] args = { "one", "two", "three" };
-      Main.main(args);
+    Main m = new Main();
+    String[] args = {"one", "two", "three"};
+    Main.main(args);
   }
 
 

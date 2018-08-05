@@ -1,8 +1,12 @@
 package edu.bu.met.cs665;
 
+import org.apache.log4j.Logger;
 import edu.bu.met.cs665.example1.Person;
 
 public class Main {
+
+  private static Logger logger = Logger.getLogger(Main.class);
+
 
   /**
    * A main method to run examples.
@@ -11,7 +15,9 @@ public class Main {
    */
   public static void main(String[] args) {
     Main m = new Main();
-    System.out.println(m.doIt());
+
+    logger.info(m.doIt());
+
 
   }
 
@@ -19,10 +25,7 @@ public class Main {
 
   private String doIt() {
     Person student = new Person("John", "Doe");
-
-    // a temporary variable to store the lastname,firstname.  
-    String s = student.getLastName() + ',' + student.getLastName();
-    return s;
+    return student.getLastName() + ',' + student.getLastName();
   }
 
 }

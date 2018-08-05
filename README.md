@@ -12,6 +12,9 @@ This is a Java Maven Project Template
 
 [![sonarcloud](https://sonarcloud.io/api/project_badges/measure?project=edu.bu.cs665%3AExample-1&metric=alert_status)](file:https://sonarcloud.io/api/project_badges/measure?project=edu.bu.cs665%3AExample-1&metric=alert_status)
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+
 We use Apache Maven to compile and run this project. 
 
 You need to install Apache Maven (https://maven.apache.org/)  on your system. 

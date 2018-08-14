@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>edu.bu.cs665</groupId>
-	<artifactId>Self-Laundry-Factory</artifactId>
+	<artifactId>Full-Automatic-Laundry-Machine</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -16,7 +16,8 @@
 		<checkstyle.version>8.10.1</checkstyle.version>
 		<checkstyle.plugin.version>2.17</checkstyle.plugin.version>
 		<sevntu.checkstyle.plugin.version>1.29.0</sevntu.checkstyle.plugin.version>
-
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
 
 	</properties>
 

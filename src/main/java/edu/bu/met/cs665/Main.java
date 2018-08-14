@@ -1,11 +1,8 @@
 package edu.bu.met.cs665;
 
-import org.apache.log4j.Logger;
-import edu.bu.met.cs665.example1.Person;
+import edu.bu.met.cs665.entity.LaundrySystem;
 
 public class Main {
-
-  private static Logger logger = Logger.getLogger(Main.class);
 
 
   /**
@@ -14,18 +11,9 @@ public class Main {
    * @param args not used
    */
   public static void main(String[] args) {
-    Main m = new Main();
 
-    logger.info(m.doIt());
-
-
+	//Create a single game object
+	  LaundrySystem laundrySystem = LaundrySystem.getInstance();
+	  laundrySystem.start();
   }
-
-
-
-  private String doIt() {
-    Person student = new Person("John", "Doe");
-    return student.getLastName() + ',' + student.getLastName();
-  }
-
 }

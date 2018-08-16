@@ -1,6 +1,6 @@
 package edu.bu.met.cs665.mediator;
 
-public interface WasherMediator {
+public interface Mediator {
 
 	public void start();
 	public void pause();
@@ -8,7 +8,7 @@ public interface WasherMediator {
 	public boolean checkTemperature(int temp);
 	public void setTimer();
 	public void wash();
-	public void rain();
+	public void rinse();
 	public void spin();
 
 	

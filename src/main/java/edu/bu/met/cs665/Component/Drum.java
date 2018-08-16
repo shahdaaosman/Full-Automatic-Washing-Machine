@@ -1,9 +1,9 @@
-package edu.bu.met.cs665.button;
+package edu.bu.met.cs665.Component;
 
 import edu.bu.met.cs665.mediator.WasherColleague;
 import edu.bu.met.cs665.mediator.Mediator;
 
-public class StartButton implements WasherColleague {
+public class Drum implements WasherColleague {
 
 	protected Mediator mediator;
 
@@ -12,5 +12,4 @@ public class StartButton implements WasherColleague {
 		this.mediator = mediator;
 		
 	}
-
 }

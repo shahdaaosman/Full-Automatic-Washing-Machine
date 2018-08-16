@@ -7,5 +7,5 @@ package edu.bu.met.cs665.mediator;
  */
 public interface WasherColleague {
 
-	public void setMediator(WasherMediator mediator);
+	public void setMediator(Mediator mediator);
 }

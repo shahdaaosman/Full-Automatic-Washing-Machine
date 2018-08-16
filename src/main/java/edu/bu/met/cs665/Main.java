@@ -1,6 +1,6 @@
 package edu.bu.met.cs665;
 
-import edu.bu.met.cs665.entity.LaundrySystem;
+import edu.bu.met.cs665.mediator.Washer;
 
 public class Main {
 
@@ -12,8 +12,9 @@ public class Main {
    */
   public static void main(String[] args) {
 
-	//Create a single game object
-	  LaundrySystem laundrySystem = LaundrySystem.getInstance();
-	  laundrySystem.start();
+	//Create a single Machine object
+	  Washer automaticWasher = Washer.getInstance();
+	  
+	  Washer.start();
   }
 }

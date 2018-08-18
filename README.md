@@ -1,10 +1,30 @@
-# Project Template
+# Full Automatic Washing Machine
+This project is the software programe for an full automatic washing mashine it have all the process 
+for how the internal component work.The user do not know about it. He just load his closthes 
+and select the programe.
 
-This is a Java Maven Project Template
+# Features implemented
+<p>This project was built using two design pattern:</p>
+  <p>1-Singelton Design Pattern.</p>
+  This design pattern help to Ensure that we have one washer object class has only one instance, 
+  and provide a global point of access to it.
+  <p>2-Mediator Design Pattern.</p>
+  
+  this design helped to .........
+
+# Implementation Details
+The user come and chose a programe. then he press start.
+the washer look for the brogram he used and statr it. when the program start
+
+# Future Implantation
+<p> Adding another programe to the machine is easy we just add a new mediator withe the spicific value
+for temepture and drum rotate and it will work</p>
 
 
-# How to compile the project
+# Getting Started
 
+This project built in a Java Maven Template and it
+use Apache Maven to compile and run. 
 
 [![Build Status](https://travis-ci.org/kiat/JavaProjectTemplate.svg?branch=master)](https://travis-ci.org/kiat/JavaProjectTemplate)  
 

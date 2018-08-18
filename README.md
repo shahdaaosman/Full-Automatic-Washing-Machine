@@ -3,18 +3,33 @@ This project is the software programe for an full automatic washing mashine it h
 for how the internal component work.The user do not know about it. He just load his closthes 
 and select the programe.
 
+fully-automatic washing machines, which gives you the choice when it comes to how you want to wash your clothes. If you need a certain temperature or you’re washing with a certain fabric, then programs help you find the optimal washing conditions for your laundry needs from selecting the right wash temperature to setting up your washing timing.
+
 # Features implemented
 <p>This project was built using two design pattern:</p>
   <p>1-Singelton Design Pattern.</p>
   This design pattern help to Ensure that we have one washer object class has only one instance, 
   and provide a global point of access to it.
   <p>2-Mediator Design Pattern.</p>
-  
-  this design helped to .........
+ The Mediator defines an object that controls how a set of objects interact. 
+ Loose coupling between colleague objects is achieved by having colleagues 
+ communicate with the Mediator, rather than with each other
 
 # Implementation Details
-The user come and chose a programe. then he press start.
-the washer look for the brogram he used and statr it. when the program start
+1.	You put your clothes.
+2.	You set the program you want and switch on the power.
+3.	The programmer opens the water valves so hot and cold water enter the machine and fill up the outer and inner drums. 
+4.	The programmer switches off the water valves.
+5.	The thermostat measures the temperature of the incoming water. If it's too cold, it open hot water. And if it hot it open cold water.
+6.	When the water is hot enough, the programmer makes the inner drum rotate back and forth, sloshing the clothes through the soapy water.
+7.	The detergent pulls the dirt from your clothes and traps it in the water.
+8.	The programmer opens a valve so the water drains from both drums. Then it switches on the pump to help empty the water away.
+9.	The programmer opens the water valves again so clean water enters the drums.
+10.	The programmer makes the inner drum rotate back and forth so the clean water rinses the clothes. It empties both drums and repeats this process several times to get rid of all the soap.
+11.	When the clothes are rinsed, the programmer makes the inner drum rotate at really high speed. The clothes are flung against the outside edge of the inner drum, but the water they contain is small enough to pass through the drum's tiny holes into the outer drum. Spinning gets your clothes dry using the same idea as a centrifuge.
+12.	The pump removes any remaining water from the outer drum and the wash cycle comes to an end.
+13.	You take your clothes out and marvel at how clean they are!
+
 
 # Future Implantation
 <p> Adding another programe to the machine is easy we just add a new mediator withe the spicific value

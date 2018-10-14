@@ -1,13 +1,15 @@
 package edu.bu.met.cs665.mediator;
 
-import edu.bu.met.cs665.Component.Agitator;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 import edu.bu.met.cs665.Component.ColdWaterValve;
 import edu.bu.met.cs665.Component.DrainValve;
-import edu.bu.met.cs665.Component.Drum;
 import edu.bu.met.cs665.Component.HotWaterValve;
 import edu.bu.met.cs665.Component.LevelSensor;
 import edu.bu.met.cs665.Component.Lock;
 import edu.bu.met.cs665.Component.Motor;
+import edu.bu.met.cs665.Component.TemperatureSensor;
 import edu.bu.met.cs665.Component.Timer;
 import edu.bu.met.cs665.button.PauseButton;
 import edu.bu.met.cs665.button.StartButton;
@@ -17,6 +19,7 @@ import edu.bu.met.cs665.programs.MixedLoadMediator;
 import edu.bu.met.cs665.programs.RinsMediator;
 import edu.bu.met.cs665.programs.SilkMediator;
 import edu.bu.met.cs665.programs.WoolMediator;
+
 
 public class Washer{
 
@@ -44,15 +47,18 @@ public class Washer{
 		 return SingletonHolder.INSTANCE;
 	}
 
+	/**
+	 * This Method initialize the hardware component and the programes
+	 */
 	public void initComponent() {
+		
 		Mediator mediator = null;
 		WasherController washer = new WasherController();
-		Agitator agitator = new Agitator();
 		ColdWaterValve coldWaterValve = new ColdWaterValve();
 		HotWaterValve hotWaterValve = new HotWaterValve();
 		LevelSensor levelSensor = new LevelSensor();
+		TemperatureSensor temperatureSensor = new TemperatureSensor();
 		Motor motor = new Motor ();
-		Drum Drum = new Drum();
 		Timer timer = new Timer();
 		StartButton startButton = new StartButton();
 		PauseButton pauseButton = new PauseButton();
@@ -60,58 +66,129 @@ public class Washer{
 		Lock lock = new Lock ();
 		Detergent detergent = new Detergent ();
 		
-		mediator = new CottonsMediator (washer,coldWaterValve,hotWaterValve,levelSensor,motor
-				,Drum,agitator,timer,startButton,pauseButton,drainValve,lock,detergent);
+		// Display menu
+		menu();
+		while (true) {
+		int programe=selectAPrograme();
+		System.out.print("Press SATRT button ..");
+		System.out.println();
 		
-		setProgramMediator(mediator,washer, coldWaterValve, hotWaterValve, levelSensor, motor,
-				agitator, Drum, timer, startButton,pauseButton, drainValve, lock, detergent);
+		if (programe == 1) {
+		// Cottons Program
+		mediator = new CottonsMediator (washer,coldWaterValve,hotWaterValve,levelSensor
+				,temperatureSensor, motor,timer,startButton,pauseButton,drainValve,lock,detergent);
 		
-		mediator = new MixedLoadMediator (washer,coldWaterValve,hotWaterValve,levelSensor,motor
-				,Drum,agitator, timer,startButton,pauseButton,drainValve,lock,detergent);
+		setProgramMediator(mediator,washer, levelSensor, temperatureSensor,motor,timer, startButton);
 		
-		setProgramMediator(mediator,washer, coldWaterValve, hotWaterValve, levelSensor, motor,
-				agitator, Drum, timer, startButton,pauseButton, drainValve, lock, detergent);
+		startButton.press();
+
+		}else if (programe == 2) {
+		//  MixedLoad Program
+		mediator = new MixedLoadMediator (washer,coldWaterValve,hotWaterValve,levelSensor
+				,temperatureSensor, motor,timer,startButton,pauseButton,drainValve,lock,detergent);
 		
-		mediator = new RinsMediator (washer,coldWaterValve,hotWaterValve,levelSensor,motor
-				,Drum,agitator,timer,startButton,pauseButton,drainValve,lock,detergent);
+		setProgramMediator(mediator,washer, levelSensor, temperatureSensor,motor,timer, startButton);
 		
-		setProgramMediator(mediator,washer, coldWaterValve, hotWaterValve, levelSensor, motor,
-				agitator, Drum, timer, startButton,pauseButton, drainValve, lock, detergent);
+
+		startButton.press(); 
 		
-		mediator = new SilkMediator (washer,coldWaterValve,hotWaterValve,levelSensor,motor
-				,Drum,agitator,timer,startButton,pauseButton,drainValve,lock,detergent);
+		}else if (programe == 3){
+	    // Rinse Program
+		mediator = new RinsMediator (washer,coldWaterValve,hotWaterValve,levelSensor
+				,temperatureSensor, motor,timer,startButton,pauseButton,drainValve,lock,detergent); 
 		
-		setProgramMediator(mediator,washer, coldWaterValve, hotWaterValve, levelSensor, motor,
-				agitator, Drum, timer, startButton,pauseButton, drainValve, lock, detergent);
+		setProgramMediator(mediator,washer, levelSensor, temperatureSensor,motor,timer, startButton);
 		
-		mediator = new WoolMediator (washer,coldWaterValve,hotWaterValve,levelSensor,motor
-				,Drum,agitator,timer,startButton,pauseButton,drainValve,lock,detergent);
+
+		startButton.press();
 		
-		setProgramMediator(mediator,washer, coldWaterValve, hotWaterValve, levelSensor, motor,
-				agitator, Drum, timer, startButton,pauseButton, drainValve, lock, detergent);
+		}else if (programe == 4){
+	    // Silk Program
+		mediator = new SilkMediator (washer,coldWaterValve,hotWaterValve,levelSensor
+				,temperatureSensor, motor,timer,startButton,pauseButton,drainValve,lock,detergent);
+		
+		setProgramMediator(mediator,washer, levelSensor, temperatureSensor,motor,timer, startButton);
+		
+
+		startButton.press();
+		
+		}else if (programe == 5){
+	    //  Wool Program
+		mediator = new WoolMediator (washer,coldWaterValve,hotWaterValve,levelSensor
+				,temperatureSensor, motor,timer,startButton,pauseButton,drainValve,lock,detergent);
+		
+		setProgramMediator(mediator,washer, levelSensor, temperatureSensor,motor,timer, startButton);
+		
+		startButton.press();
+		}else {
+			continue;
+		}
+		break;
+		}
 		
 		
 		
 	}
 
-	private void setProgramMediator(Mediator mediator,WasherController washer,ColdWaterValve coldWaterValve, HotWaterValve hotWaterValve,
-			LevelSensor levelSensor, Motor motor,Agitator agitator, Drum Drum, Timer timer, StartButton startButton,
-			PauseButton pauseButton, DrainValve drainValve, Lock lock, Detergent detergent) {
+	/**
+	 * This method allow the user to select a programe
+	 * @return
+	 */
+	private int selectAPrograme() {
+		int program;
+		
+		
+		while(true) {
+			// If the user enter a non integer number it throw an exception
+	        try {
+				Scanner input = new Scanner(System.in);
+				
+				System.out.print("Enter A programe number :");
+				program = input.nextInt();
+	        }
+				catch (InputMismatchException exception) {
+				System.out.println("Integers only, please!"); 
+				 continue;
+			}
+	        break;
+	        
+			}  
+		return program;
+	}
+
+	private void menu() {
+		//Display Menu
+		System.out.println(" Hello PLease select your close programe");
+		System.out.println(" ............. Thanks ..................");
+		System.out.println(" Now but your close in the Drum ........");
+		System.out.println(" ( 1 )----------------- Cotton ");
+		System.out.println(" ( 2 )-------------- MixedLoad ");
+		System.out.println(" ( 3 )------------------ Rines ");
+		System.out.println(" ( 4 ) ----------------- Silk ");
+		System.out.println(" ( 5 ) ----------------- Wool ");
+	}
+
+	/**
+	 * This method set the parameter for the mediator
+	 * @param mediator
+	 * @param washer
+	 * @param levelSensor
+	 * @param temperatureSensor
+	 * @param motor
+	 * @param timer
+	 * @param startButton
+	 */
+	private void setProgramMediator(Mediator mediator,WasherController washer,
+			LevelSensor levelSensor, TemperatureSensor temperatureSensor,
+			Motor motor, Timer timer, StartButton startButton) {
 		
 		washer.setMediator(mediator);
-		startButton.setMediator(mediator);
-		coldWaterValve.setMediator(mediator);
-		hotWaterValve.setMediator(mediator);
+		temperatureSensor.setMediator(mediator);
 		levelSensor.setMediator(mediator);
-		agitator.setMediator(mediator);
 		motor.setMediator(mediator);
-		Drum.setMediator(mediator);
 		timer.setMediator(mediator);
 		startButton.setMediator(mediator);
-		pauseButton.setMediator(mediator);
-		drainValve.setMediator(mediator);
-		lock.setMediator(mediator);
-		detergent.setMediator(mediator);
+		
 	}
 
 

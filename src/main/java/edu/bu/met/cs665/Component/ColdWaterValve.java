@@ -1,16 +1,26 @@
 package edu.bu.met.cs665.Component;
 
-import edu.bu.met.cs665.mediator.WasherColleague;
-import edu.bu.met.cs665.mediator.Mediator;
+/**
+ * This class represents cold Water Valve
+ * 
+ * @author Sahad Osman
+ *
+ */
+public class ColdWaterValve {
 
-public class ColdWaterValve implements WasherColleague {
+	/**
+	 * This method open valve
+	 */
+	public void open(){
+		System.out.println("cold water valave is open .... ");
 
-	protected Mediator mediator;
-
-	@Override
-	public void setMediator(Mediator mediator) {
-		this.mediator = mediator;
-		
+	}
+	
+	/**
+	 * This method close valve
+	 */
+	public void close(){
+		System.out.println("cold water valave is closed ");
 	}
 
 }

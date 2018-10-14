@@ -1,16 +1,19 @@
 package edu.bu.met.cs665.button;
 
-import edu.bu.met.cs665.mediator.WasherColleague;
-import edu.bu.met.cs665.mediator.Mediator;
 
-public class PauseButton implements WasherColleague{
+/**
+ * This class represents Pause Button
+ * 
+ * @author Sahad Osman
+ *
+ */
+public class PauseButton{
 
-	protected Mediator mediator;
 
-	@Override
-	public void setMediator(Mediator mediator) {
-		this.mediator = mediator;
-		
+	/**
+	 * This method check if Pause button is presses
+	 */
+	public void press(){
+		System.out.println("-- Pause Button pressed -- ");
 	}
-
 }

@@ -14,7 +14,7 @@ public class Main {
 
 	//Create a single Machine object
 	  Washer automaticWasher = Washer.getInstance();
+	  automaticWasher.initComponent();
 	  
-	  Washer.start();
   }
 }

@@ -10,11 +10,19 @@ public class WasherController implements WasherColleague {
 		
 	}
 
+	protected boolean pauseButton = false;
+	
+	
 	public void start() {
-		
+	
 		mediator.wash();
+		
+		if (pauseButton == true) {
+			mediator.pause();
+		}
 	}
 
+	
 
 
 	

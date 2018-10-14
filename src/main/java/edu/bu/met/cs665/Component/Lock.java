@@ -1,15 +1,30 @@
 package edu.bu.met.cs665.Component;
 
-import edu.bu.met.cs665.mediator.WasherColleague;
-import edu.bu.met.cs665.mediator.Mediator;
-
-public class Lock implements WasherColleague{
+/**
+ * This class represents a Lock for the washer lid 
+ * 
+ * @author Sahad Osman
+ *
+ */
+public class Lock{
 	
-	protected Mediator mediator;
 
-	@Override
-	public void setMediator(Mediator mediator) {
-		this.mediator = mediator;
+	/**
+	 * This method close lid
+	 */
+	public void off() {
+		System.out.println("The lid is closed");
 		
 	}
+	
+	/**
+	 * This method open lid
+	 */
+	public void on() {
+		System.out.println("The lid is open");
+	}
+	
+	
+	
+	
 }
